@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+// https://geo.ipify.org/api/v2/country,city?apiKey=at_Q0IFJ9OzFG4wO9oY19PRxDZS2MzwR&ipAddress=8.8.8.8
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+        <span>
+
+    <span>
+      <p>
+        IP Address Tracker
+      </p>
+
+      <span>
+        <input className="serch-box" type="text" placeholder="Search for any IP address or domain" required/>
+        <button type="submit"></button>
+      </span>
+    </span>
+
+    <span>
+      <span>
+        <p>IP Address</p>
+      </span>
+
+      <span>
+        <p>Location</p>
+      </span>
+
+      <span>
+        <p>Timezone UTC</p>
+      </span>
+
+      <span>
+        <p>ISP</p>
+      </span>
+    </span>
+
+  </span>
+
     </div>
   );
 }
