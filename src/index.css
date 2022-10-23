@@ -6,17 +6,62 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
   font-family: 'Outfit',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.search-box{
- border: 1px solid black;
- transition: 0.5s;
-  outline: 1px solid black;
+.heading{
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
-.search-box::before, .search-box::after{
-  border:1px solid red;
+
+input{
+  border: 1px solid black;
+  transition: 0.5s;
+  cursor: pointer;
+  border-top-left-radius:0.8rem ;
+  border-bottom-left-radius: 0.8rem;
+  width: 30rem;
+  padding-left: 1.5rem;
+}
+input:focus{
+  outline: none;
+}
+
+.first-part{
+  background: url('images/pattern-bg.png');
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+.input-form{
+  display: flex;
+  height: 3rem;
+}
+.submit-btn{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height:100%;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  transition: 0.15s;
+
+}
+.submit-btn:hover{
+  background-color: hsl(0, 0%, 17%);
 }
