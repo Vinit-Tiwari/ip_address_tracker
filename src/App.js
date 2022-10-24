@@ -1,5 +1,6 @@
 // https://geo.ipify.org/api/v2/country,city?apiKey=at_Q0IFJ9OzFG4wO9oY19PRxDZS2MzwR&ipAddress=8.8.8.8
-
+import { MapContainer, TileLayer, useMap, Marker, Popup} from 'react-leaflet'
+import "leaflet/dist/leaflet.css"
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
 
         </span>
 
-      </span>
+      
 
       <span className='details'>
             <span className='details-innerspan'>
@@ -43,7 +44,21 @@ function App() {
               <p className='black-bold'>ower name</p>
             </span>
           </span>
-
+      </span>
+      <span>
+          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} 
+          style={{height:"65vh" ,width:"100%", position:"relative",top:"-9rem"}}>
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[51.505, -0.09]}>
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+            </Marker>
+          </MapContainer>
+      </span>
     </div>
   );
 }
