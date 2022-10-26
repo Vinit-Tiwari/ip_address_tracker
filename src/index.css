@@ -8,7 +8,7 @@ body {
   margin: 0;
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: 'Outfit',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,15 +26,20 @@ input{
   border: 1px solid black;
   transition: 0.5s;
   cursor: pointer;
+  min-width: 10rem;
+  width: 80%;
   border-top-left-radius:0.8rem ;
   border-bottom-left-radius: 0.8rem;
-  width: 30rem;
   padding-left: 1.5rem;
 }
 input:focus{
   outline: none;
 }
-
+.input-parent{
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+}
 .first-part{
   background: url('images/pattern-bg.png');
   background-repeat: no-repeat;
@@ -68,23 +73,29 @@ input:focus{
   background-color: hsl(0, 0%, 17%);
 }
 .details{
-  overflow: hidden;
   display: flex;
-  position: relative;
-  margin: auto;
-  top: -3.5rem;
+  flex-direction: row;
+  gap: 1rem;
+  position: absolute;
+  top: 280px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 1.25rem;
   z-index: 3000;
-  justify-content: space-evenly;
-  max-width: 70rem;
-  background-color: white;
   border-radius: 0.8rem;
-  align-items: center;
-  height: 9rem;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: white;
+  width: 80%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.details span{
+.max-width{max-width: 17rem;}
+.details > span{
   width: 100%;
-  padding:0 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 1.25rem;
 }
 .details span:not(:last-child){
   border-right: 1px solid hsl(0, 0%, 59%);
@@ -92,10 +103,10 @@ input:focus{
 
 .black-bold{
   color: black;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 500;
   word-spacing: 0;
-  line-height: 0.8;
+  line-height: 1;
 }
 .details-innerspan{
   display: flex;
@@ -105,4 +116,26 @@ input:focus{
 .properties{
   color: hsl(0, 0%, 59%);
   font-weight: 500;
+}
+
+@media screen and (max-width: 950px) {
+  .details{
+    flex-direction: column;
+    align-items: center;
+    top:350px;
+  }
+  .details >span{
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .details>span>p{
+    text-align: center;
+  }
+  .black-bold{
+    font-size: 1.15rem;
+  }
+    .details span:not(:last-child) {
+      border-right: none;
+    }
 }
